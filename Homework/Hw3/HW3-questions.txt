@@ -1,0 +1,23 @@
+指示
+Please go through "example.pdf" first and create your own "example.mlx" file with same structure.
+Choose one figure you like to use in the example file.
+Replace and implement `K = wiener2(...);` in "example.pdf"​ with reference of provided code in "wiener-filter.pdf".
+Run through the code and export the results in PDF file (example.pdf) submitted to me.
+
+Notes:
+Please maintain the code readability, or use comments to assist me in understanding.
+You can implement `wiener2()` in a separate file (wiener.m), but don't forget to upload the file.
+(X) You can use built-in wiener2(), but I'll give you a maximum of 70 points.
+Submit the following files: `example.pdf`, and 'wiener.m' (if you have).
+If you have any questions, please feel free to contact me (t110598007@ntut.org.tw)
+
+12/28 Update
+
+Some students said that provided code could not run successfully.
+I wrote a new version of the code for your reference. Attached, please find the "example-fixed.pdf"
+
+I am sorry I didn't inspect the code thoroughly. For those who follow the previously provided code but cannot get an expected result (all dark, all white), I'll still give you 100 points. You can alternatively complete this homework by the "example-fixed.pdf" to get 100 points.
+
+Please explain, by Markdown or comments, the purpose of each block and how the code achieves the Wiener filtering if you want bonus points. I'll give you extra points maximum of 20.
+
+Feel free to contact me (t110598007@ntut.org.tw) if you have other issues.

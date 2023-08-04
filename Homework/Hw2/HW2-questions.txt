@@ -1,0 +1,12 @@
+Q1: please implement a low-pass Gaussian filtering function.
+B = gaussfilt(A, filter_size, sigma)​
+
+Q2: design a function for edge detection using the Sobel operator.
+B = sobelfilt(A)​
+
+Q3: choose a figure and run both functions in the live script (.mlx) to show the results. Afterward, export the file to PDF to submit. (Please refer to the `example.pdf`)
+
+Please maintain the code readability, or use comments to assist me in understanding.
+Don’t use built-in functions to implement your functions (`conv2()`, `meshgrid()`, and other basic functions are okay).
+
+Submit three file named as follow: `gaussfilt.m`, `sobelfilt.m`, and `example.pdf`.
