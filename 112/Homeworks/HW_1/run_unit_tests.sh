@@ -1,0 +1,1 @@
+matlab -nosplash -nodesktop -batch "runtests('HW1Q3_unittest.p')"
