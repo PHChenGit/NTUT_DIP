@@ -5,15 +5,15 @@ testimg2 = imread('face.tif');
 testimg3 = imread('moon.tif');
 
 %% Show (a)
-% Q3_show(testimg1, 'medianfilter(img, 5)', 'medianfilterred image')
-% Q3_show(testimg2, 'medianfilter(img, 5)', 'medianfilterred image')
+Q3_show(testimg1, 'medianfilter(img, 5)', 'medianfilterred image')
+Q3_show(testimg2, 'medianfilter(img, 5)', 'medianfilterred image')
 
 %% Show (b)
 Q3_show(testimg1, 'gaussfilter(img, 1, 5, 10)', 'gaussfilterred image')
 Q3_show(testimg2, 'gaussfilter(img, 1, 5, 10)', 'gaussfilterred image')
 
 %% Show (c)
-% Q3_show(testimg3, 'highboostfilter(img, 2, 5)', 'highboostfiltered image')
+Q3_show(testimg3, 'highboostfilter(img, 2, 5)', 'highboostfiltered image')
 
 %%
 function O = medianfilter(I, filter_size)
@@ -36,10 +36,8 @@ end
 function O = gaussfilter(I, K, filter_size, sigma)
     % O is filtered image, I is original image
 
-    O = zeros(size(I));
     padding_size = floor(filter_size/2);
     padded_img = padarray(im2double(I), [padding_size, padding_size]);
-    [w, h] = size(padded_img);
 
     % Calculate gaussian kernel
     kernel_window = zeros(filter_size, filter_size);
@@ -48,7 +46,7 @@ function O = gaussfilter(I, K, filter_size, sigma)
         for y = 1:filter_size
             x1 = x - padding_size;
             y1 = y - padding_size;
-            g  = K * exp(-(x1^2 + y1^2)/2*(sigma^2)) * 1 / (2*pi*(sigma^2));
+            g  = K * exp((x1^2 + y1^2) / (2*(sigma^2)));
             kernel_window(x, y) = g;
         end
     end
@@ -57,13 +55,11 @@ function O = gaussfilter(I, K, filter_size, sigma)
     kernel_window = kernel_window ./ total_g;
 
     % Convolution
-    O = conv2(padded_img, kernel_window, "same");
+    O = conv2(padded_img, kernel_window, "valid");
 end
 
 function O = highboostfilter (I, A, filter_size)
     % O is filtered image, I is original image
-
-    % your implementation here ...
 end
 
 function Q3_show(img, string, titlestr)
