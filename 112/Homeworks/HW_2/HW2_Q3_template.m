@@ -60,6 +60,10 @@ end
 
 function O = highboostfilter (I, A, filter_size)
     % O is filtered image, I is original image
+    LPF = gaussfilter(I, 1, filter_size, 10);
+    double_img = im2double(I);
+    tmp = double_img - LPF;
+    O = (A-1) .* double_img + tmp;
 end
 
 function Q3_show(img, string, titlestr)
